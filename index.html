@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shalu Jhaa — Software Engineer Portfolio</title>
+  <meta name="description" content="Shalu Jhaa — Aspiring Software Engineer specializing in C++, AI/ML and full-stack development. Explore projects in machine learning, IoT and cloud systems." />
+  <meta name="keywords" content="Shalu Jhaa, Software Engineer, AI ML, C++ Developer, Portfolio" />
+  <meta name="author" content="Shalu Jhaa" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shalu Jhaa — Software Engineer Portfolio" />
+  <meta property="og:description" content="Aspiring Software Engineer | AI/ML Enthusiast | Problem Solver" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-bracket">&lt;</div>
+      <div class="loader-text">
+        <span class="loader-name">SHALU_JHA</span>
+        <span class="loader-cursor">_</span>
+      </div>
+      <div class="loader-bracket">/&gt;</div>
+    </div>
+    <div class="loader-bar-track"><div class="loader-bar"></div></div>
+    <div class="loader-status">compiling portfolio<span class="loader-dots"></span></div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ BACKGROUND LAYERS ============ -->
+  <div class="bg-layer">
+    <canvas id="particleCanvas"></canvas>
+    <div class="mesh-gradient"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+    <div class="mouse-light" id="mouseLight"></div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><span class="logo-bracket">&lt;</span>SJ<span class="logo-bracket">/&gt;</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#journey" class="nav-link" data-section="journey">Journey</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Hire Me</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE NAV ============ -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#hero" class="mobile-link" data-section="hero">01 — Home</a>
+    <a href="#skills" class="mobile-link" data-section="skills">02 — Skills</a>
+    <a href="#projects" class="mobile-link" data-section="projects">03 — Projects</a>
+    <a href="#journey" class="mobile-link" data-section="journey">04 — Journey</a>
+    <a href="#contact" class="mobile-link" data-section="contact">05 — Contact</a>
+  </div>
+
+  <main>
+    <!-- ============================================ -->
+    <!-- SECTION 1 — HERO / INTRODUCTION -->
+    <!-- ============================================ -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-grid">
+
+        <div class="hero-left">
+          <div class="eyebrow reveal-up">
+            <span class="eyebrow-dot"></span>
+            AVAILABLE FOR OPPORTUNITIES
+          </div>
+
+          <h1 class="hero-name reveal-up">
+            <span class="hero-hi">Hi, I'm</span>
+            Shalu Jhaa
+          </h1>
+
+          <h2 class="hero-typed-wrap reveal-up">
+            <span class="hero-typed-prefix">&gt;</span>
+            <span id="typedText" class="hero-typed"></span><span class="typed-cursor">|</span>
+          </h2>
+
+          <p class="hero-tagline reveal-up">
+            Passionate about building innovative software solutions and exploring
+            <span class="text-glow">Artificial Intelligence</span> technologies.
+          </p>
+
+          <div class="hero-buttons reveal-up">
+            <a href="#skills" class="btn btn-primary">
+              <span>View Skills</span>
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <span>View Projects</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+            </a>
+            <a href="ShaluJhaaResume.pdf" class="btn btn-ghost" id="resumeBtn" download>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+              <span>Resume</span>
+            </a>
+          </div>
+
+          <div class="hero-stats reveal-up">
+            <div class="stat">
+              <span class="stat-num" data-count="2">0</span>
+              <span class="stat-label">Major Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-count="91">0</span><span class="stat-suffix">%</span>
+              <span class="stat-label">Peak Model Accuracy</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-count="78" data-decimal="true">0</span>
+              <span class="stat-label">CGPA / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right reveal-scale">
+          <div class="terminal-card glass-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">shalu@engineer ~ zsh</span>
+            </div>
+            <div class="terminal-body">
+              <div class="profile-wrap">
+                <div class="profile-ring">
+                  <svg class="profile-ring-svg" viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="92" class="ring-bg"/>
+                    <circle cx="100" cy="100" r="92" class="ring-fg"/>
+                  </svg>
+                  <div class="profile-img">
+                    <svg viewBox="0 0 200 200" width="100%" height="100%" role="img" aria-label="Profile avatar">
+                      <defs>
+                        <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#3b82f6"/>
+                          <stop offset="100%" stop-color="#a855f7"/>
+                        </linearGradient>
+                      </defs>
+                      <rect width="200" height="200" fill="#0c0e1a"/>
+                      <circle cx="100" cy="78" r="38" fill="url(#avatarGrad)" opacity="0.85"/>
+                      <path d="M40 190 Q100 120 160 190 Z" fill="url(#avatarGrad)" opacity="0.85"/>
+                      <text x="100" y="92" font-family="Space Grotesk" font-size="42" fill="#05050a" text-anchor="middle" font-weight="700">SJ</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <pre class="terminal-code"><span class="t-key">const</span> <span class="t-var">engineer</span> = {
+  name: <span class="t-str">'Shalu Jhaa'</span>,
+  role: <span class="t-str">'Software Engineer'</span>,
+  stack: [<span class="t-str">'C++'</span>, <span class="t-str">'Python'</span>, <span class="t-str">'AI/ML'</span>],
+  status: <span class="t-str">'open_to_work'</span> <span class="t-comment">// true</span>
+};</pre>
+            </div>
+          </div>
+          <div class="floating-badge badge-1">⚡ AI/ML Intern</div>
+          <div class="floating-badge badge-2">🏆 SIH Participant</div>
+        </div>
+      </div>
+
+      <a href="#skills" class="scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+        <span class="scroll-label">SCROLL</span>
+      </a>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2 — TECHNICAL SKILLS -->
+    <!-- ============================================ -->
+    <section class="section skills-section" id="skills">
+      <div class="section-inner">
+        <div class="section-head reveal-up">
+          <span class="section-eyebrow">02 / Capabilities</span>
+          <h2 class="section-title">Technical <span class="text-glow">Skills</span></h2>
+          <p class="section-sub">The languages, frameworks and tools I use to design, train and ship software.</p>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-category glass-card reveal-up" style="--delay:0">
+            <div class="skill-cat-head">
+              <div class="skill-cat-icon icon-lang">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4l-6 8 6 8M16 4l6 8-6 8"/></svg>
+              </div>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>C++</span><span class="skill-pct">92%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>C</span><span class="skill-pct">88%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Java</span><span class="skill-pct">80%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal-up" style="--delay:1">
+            <div class="skill-cat-head">
+              <div class="skill-cat-icon icon-cs">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <h3>Core Computer Science</h3>
+            </div>
+            <div class="chip-cloud">
+              <span class="chip">Data Structures</span>
+              <span class="chip">Algorithms</span>
+              <span class="chip">OOP</span>
+              <span class="chip">DBMS</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal-up" style="--delay:2">
+            <div class="skill-cat-head">
+              <div class="skill-cat-icon icon-ai">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <h3>AI / Machine Learning</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>TensorFlow / Keras</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>NumPy / Pandas</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Matplotlib / Seaborn</span><span class="skill-pct">87%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal-up" style="--delay:3">
+            <div class="skill-cat-head">
+              <div class="skill-cat-icon icon-tools">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3>Tools &amp; Platforms</h3>
+            </div>
+            <div class="chip-cloud">
+              <span class="chip">Git</span>
+              <span class="chip">VS Code</span>
+              <span class="chip">Jupyter Notebook</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3 — PROJECTS -->
+    <!-- ============================================ -->
+    <section class="section projects-section" id="projects">
+      <div class="section-inner">
+        <div class="section-head reveal-up">
+          <span class="section-eyebrow">03 / Selected Work</span>
+          <h2 class="section-title">Featured <span class="text-glow">Projects</span></h2>
+          <p class="section-sub">Real systems built end-to-end — from raw data to deployed accuracy.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card glass-card tilt-card reveal-up" style="--delay:0">
+            <div class="project-card-glow"></div>
+            <div class="project-top">
+              <span class="project-index">01</span>
+              <div class="project-metric">
+                <span class="metric-num">89%</span>
+                <span class="metric-label">Accuracy</span>
+              </div>
+            </div>
+            <h3 class="project-title">Bank Customer Churn Prediction</h3>
+            <p class="project-desc">Analyzed 10,000+ customer records and developed machine learning models to predict customer churn with high precision.</p>
+
+            <div class="project-stack">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">NumPy</span>
+              <span class="stack-chip">Pandas</span>
+              <span class="stack-chip">Seaborn</span>
+            </div>
+
+            <ul class="project-highlights">
+              <li>Feature Engineering</li>
+              <li>Exploratory Data Analysis</li>
+              <li>Logistic Regression</li>
+              <li>Random Forest Classifier</li>
+            </ul>
+
+            <div class="project-actions">
+              <button class="btn btn-ghost btn-sm project-preview-btn" data-project="churn">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+              <a href="https://github.com/shalu-jhaa/Bank-Customer-Churn-Model" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.93c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="https://github.com/shalu-jhaa/Bank-Customer-Churn-Model" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up" style="--delay:1">
+            <div class="project-card-glow"></div>
+            <div class="project-top">
+              <span class="project-index">02</span>
+              <div class="project-metric">
+                <span class="metric-num">91%</span>
+                <span class="metric-label">Accuracy</span>
+              </div>
+            </div>
+            <h3 class="project-title">Smart Door Authentication System</h3>
+            <p class="project-desc">Built a face-recognition-based smart authentication system integrated with cloud and IoT technologies for secure, contactless access.</p>
+
+            <div class="project-stack">
+              <span class="stack-chip">React.js</span>
+              <span class="stack-chip">AWS Cloud</span>
+              <span class="stack-chip">IoT</span>
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">TensorFlow</span>
+              <span class="stack-chip">OpenCV</span>
+            </div>
+
+            <ul class="project-highlights">
+              <li>Real-time Face Recognition</li>
+              <li>Cloud Integration</li>
+              <li>IoT Device Connectivity</li>
+              <li>Secure Access Logging</li>
+            </ul>
+
+            <div class="project-actions">
+              <button class="btn btn-ghost btn-sm project-preview-btn" data-project="door">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview
+              </button>
+              <a href="https://github.com/shalu-jhaa/Smart-Door-Using-Face-Recognition-" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.93c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="https://github.com/shalu-jhaa/Smart-Door-Using-Face-Recognition-" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4 — ACHIEVEMENTS & EDUCATION -->
+    <!-- ============================================ -->
+    <section class="section journey-section" id="journey">
+      <div class="section-inner">
+        <div class="section-head reveal-up">
+          <span class="section-eyebrow">04 / Background</span>
+          <h2 class="section-title">My <span class="text-glow">Journey</span></h2>
+          <p class="section-sub">Education, achievements and certifications that shaped my engineering path.</p>
+        </div>
+
+        <div class="journey-grid">
+
+          <div class="journey-col reveal-up" style="--delay:0">
+            <h3 class="journey-col-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4.5-9 4.5-9-4.5L12 2zM3 6.5V14a9 5 0 0018 0V6.5"/></svg>
+              Education
+            </h3>
+            <div class="timeline">
+              <div class="timeline-item glass-card">
+                <span class="timeline-dot"></span>
+                <span class="timeline-tag">B.Tech</span>
+                <h4>Computer Science &amp; Internet of Things</h4>
+                <p class="timeline-org">Sagar Institute of Science, Technology and Engineering</p>
+                <p class="timeline-meta">RGPV University</p>
+                <div class="cgpa-pill"><span>CGPA</span><strong>7.8</strong><span>/ 10</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey-col reveal-up" style="--delay:1">
+            <h3 class="journey-col-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15a6 6 0 100-12 6 6 0 000 12zM8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+              Achievements
+            </h3>
+            <div class="achieve-list">
+              <div class="achieve-item glass-card">
+                <div class="achieve-icon">🤖</div>
+                <div>
+                  <h4>AI/ML Intern</h4>
+                  <p>Prasunet Pvt. Ltd.</p>
+                </div>
+              </div>
+              <div class="achieve-item glass-card">
+                <div class="achieve-icon">🚀</div>
+                <div>
+                  <h4>Smart India Hackathon</h4>
+                  <p>Active Participant</p>
+                </div>
+              </div>
+              <div class="achieve-item glass-card">
+                <div class="achieve-icon">🧩</div>
+                <div>
+                  <h4>Problem Solver</h4>
+                  <p>Strong analytical &amp; DSA skills</p>
+                </div>
+              </div>
+              <div class="achieve-item glass-card">
+                <div class="achieve-icon">📚</div>
+                <div>
+                  <h4>Lifelong Learner</h4>
+                  <p>Passionate technology explorer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey-col reveal-up" style="--delay:2">
+            <h3 class="journey-col-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+              Certifications
+            </h3>
+            <div class="cert-list">
+              <div class="cert-item glass-card">
+                <div class="cert-badge">C++</div>
+                <div>
+                  <h4>C++ Programming</h4>
+                  <p>Udemy</p>
+                </div>
+              </div>
+              <div class="cert-item glass-card">
+                <div class="cert-badge">Py</div>
+                <div>
+                  <h4>Python Programming</h4>
+                  <p>Coursera</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5 — CONTACT -->
+    <!-- ============================================ -->
+    <section class="section contact-section" id="contact">
+      <div class="section-inner">
+        <div class="section-head reveal-up">
+          <span class="section-eyebrow">05 / Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="text-glow">Great</span></h2>
+          <p class="section-sub">Have an opportunity or a question? My inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info reveal-up" style="--delay:0">
+            <a href="mailto:shalu.jhaa@example.com" class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4V4zM22 6l-10 7L2 6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">shaluj304@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+910000000000" class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+91 7880054827</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/shalu-jhaa-10711b286/" target="_blank" rel="noopener" class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/shalu-jhaa-10711b286</span>
+              </div>
+            </a>
+            <a href="https://github.com/shalu-jhaa" target="_blank" rel="noopener" class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.93c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/shalu-jhaa</span>
+              </div>
+            </a>
+          </div>
+
+          <form class="contact-form glass-card reveal-up" id="contactForm" style="--delay:1" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your full name" required />
+                <span class="form-error" data-for="fname">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required />
+                <span class="form-error" data-for="femail">Please enter a valid email.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required />
+              <span class="form-error" data-for="fsubject">Please enter a subject.</span>
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about the opportunity or your question..." required></textarea>
+              <span class="form-error" data-for="fmessage">Please enter a message.</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span id="submitText">Send Message</span>
+            </button>
+
+            <div class="form-success" id="formSuccess">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+              <h4>Message Sent!</h4>
+              <p>Thanks for reaching out — I'll get back to you soon.</p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo"><span class="logo-bracket">&lt;</span>SJ<span class="logo-bracket">/&gt;</span></span>
+        <p>Building software with curiosity, precision and purpose.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/shalu-jhaa" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.93c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.79-4.58 5.04.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shalu-jhaa-10711b286/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="mailto:shaluj304@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4V4zM22 6l-10 7L2 6"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Shalu Jhaa. Crafted with code &amp; curiosity.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING ACTION / BACK TO TOP ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- ============ PROJECT PREVIEW MODAL ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card glass-card" id="modalCard">
+      <button class="modal-close" id="modalClose" aria-label="Close preview">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
